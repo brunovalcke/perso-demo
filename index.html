@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decathlon PL Checkout Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header" role="banner">
+      <div class="container header-content">
+        <div class="brand" aria-label="Decathlon">
+          <svg
+            class="brand-mark"
+            viewBox="0 0 120 32"
+            role="img"
+            aria-labelledby="brand-title"
+          >
+            <title id="brand-title">Decathlon</title>
+            <rect width="120" height="32" rx="4" fill="#0082C3"></rect>
+            <text
+              x="50%"
+              y="50%"
+              dominant-baseline="middle"
+              text-anchor="middle"
+              font-size="15"
+              font-family="'Helvetica Neue', Arial, sans-serif"
+              fill="#ffffff"
+            >
+              DECATHLON
+            </text>
+          </svg>
+        </div>
+        <p class="flow-step" role="status">Delivery</p>
+      </div>
+    </header>
+
+    <main class="container layout" role="main">
+      <section class="delivery card" aria-labelledby="delivery-title">
+        <div class="section-heading">
+          <h2 id="delivery-title">Delivery</h2>
+          <a href="#" class="link-muted">Edit</a>
+        </div>
+        <div class="delivery-details">
+          <div>
+            <h3 class="subheading">Shipment 1</h3>
+            <p class="muted">Standard | Supplied by Decathlon.pl</p>
+          </div>
+          <p class="muted">Delivery between 19/10/2023 and 23/10/2023</p>
+        </div>
+        <ul class="delivery-items" aria-label="Items in delivery">
+          <li class="delivery-item">
+            <div class="item-visual" aria-hidden="true"></div>
+            <div class="item-description">
+              <p class="item-name">Triban RC 520 Disc Brake Road Bike</p>
+              <p class="muted">Qty 1</p>
+            </div>
+            <p class="item-price">£999.99</p>
+          </li>
+        </ul>
+      </section>
+
+      <aside class="order card" aria-labelledby="order-summary-title">
+        <h2 id="order-summary-title">Order summary</h2>
+        <dl class="order-breakdown">
+          <div class="order-row">
+            <dt>Subtotal</dt>
+            <dd>£999.99</dd>
+          </div>
+          <div class="order-row">
+            <dt>Delivery</dt>
+            <dd>Free</dd>
+          </div>
+          <div class="order-row">
+            <dt>Estimated tax</dt>
+            <dd>£0.00</dd>
+          </div>
+          <div class="order-row order-total">
+            <dt>Total (GBP)</dt>
+            <dd>£999.99</dd>
+          </div>
+        </dl>
+        <p class="muted order-note">Order number #2023-001</p>
+      </aside>
+
+      <section class="payment card" aria-labelledby="payment-title">
+        <h2 id="payment-title">Payment</h2>
+        <form class="payment-form">
+          <fieldset class="payment-options" aria-labelledby="payment-method-heading">
+            <legend id="payment-method-heading">Choose your payment method</legend>
+
+            <div class="payment-option" data-option="card">
+              <input
+                type="radio"
+                name="payment-method"
+                id="payment-card"
+                value="card"
+                checked
+              />
+              <label for="payment-card">
+                <span class="option-title">Credit/debit card</span>
+                <span class="option-description">Pay securely with your card</span>
+              </label>
+            </div>
+
+            <div class="payment-option" data-option="paypal">
+              <input
+                type="radio"
+                name="payment-method"
+                id="payment-paypal"
+                value="paypal"
+              />
+              <label for="payment-paypal">
+                <span class="option-title">PayPal</span>
+                <span class="option-description">Pay with your PayPal account</span>
+              </label>
+            </div>
+
+            <div class="payment-option" data-option="blik">
+              <input
+                type="radio"
+                name="payment-method"
+                id="payment-blik"
+                value="blik"
+                aria-controls="blik-details"
+                aria-expanded="false"
+              />
+              <label for="payment-blik">
+                <span class="option-title">BLIK Payment</span>
+                <span class="option-description">Use the 6-digit BLIK code</span>
+              </label>
+              <div id="blik-details" class="payment-details" hidden>
+                <p>
+                  Enter the 6-digit BLIK code generated in your banking app to authorise
+                  the payment.
+                </p>
+                <label class="inline-label" for="blik-code">
+                  BLIK code
+                  <input
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]{6}"
+                    id="blik-code"
+                    name="blik-code"
+                    maxlength="6"
+                    aria-describedby="blik-help"
+                  />
+                </label>
+                <p id="blik-help" class="muted">
+                  The code expires after 2 minutes. Confirm the payment in your mobile app.
+                </p>
+              </div>
+            </div>
+
+            <div class="payment-option" data-option="apple-pay">
+              <input
+                type="radio"
+                name="payment-method"
+                id="payment-apple"
+                value="apple-pay"
+              />
+              <label for="payment-apple">
+                <span class="option-title">Apple Pay</span>
+                <span class="option-description">Pay quickly with Apple Pay</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="payment-action">
+            <button type="submit" class="primary-action">Complete the order</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <p class="muted">Demo prototype &mdash; not connected to real payment services.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
