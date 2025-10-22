@@ -11,29 +11,32 @@ Decathlon pour la Pologne, tel qu'illustré dans la maquette fournie. L'accent e
 - une mise en page responsive proche de la maquette desktop et mobile ;
 - l'option de paiement **BLIK** repliée par défaut et extensible au clic.
 
-Le prototype est entièrement statique : aucun appel réseau ni logique de paiement réelle
-n'est implémenté.
+Le prototype est désormais servi par un petit serveur Node.js basé sur le module HTTP.
+Aucun appel réseau ni logique de paiement réelle n'est implémenté.
 
 ### Lancer la démo localement
 
-1. Cloner le dépôt :
+1. Installer les dépendances Node.js (aucune dépendance externe n'est requise) et
+démarrer le serveur :
    ```bash
-   git clone https://github.com/votre-compte/perso-demo.git
-   cd perso-demo
+   npm install
+   npm start
    ```
-2. Ouvrir `index.html` directement dans votre navigateur **ou** lancer un petit serveur HTTP :
-   ```bash
-   python -m http.server 3000
-   ```
-   Puis visiter [http://localhost:3000](http://localhost:3000).
+2. Visiter ensuite [http://localhost:3000](http://localhost:3000).
 
-Aucune dépendance n'est nécessaire : HTML, CSS et JavaScript natif suffisent.
+> `npm install` crée uniquement le fichier `package-lock.json` afin d'enregistrer la
+> version de Node utilisée, aucune dépendance réseau n'est téléchargée.
+
+Les fichiers statiques se trouvent dans le dossier `public/` et sont servis par le serveur
+Node.
 
 ## Structure du dépôt
 
-- `index.html` : structure de la page et contenu du checkout.
-- `styles.css` : styles responsive inspirés du design Decathlon.
-- `script.js` : interactions du prototype (extension/repli du paiement BLIK).
+- `public/index.html` : structure de la page et contenu du checkout.
+- `public/styles.css` : styles responsive inspirés du design Decathlon.
+- `public/script.js` : interactions du prototype (extension/repli du paiement BLIK).
+- `server.js` : serveur HTTP minimal qui expose la démo sur http://localhost:3000.
+- `package.json` : scripts npm et métadonnées du projet.
 - `README.md` : ce guide.
 
 ## Contribution
