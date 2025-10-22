@@ -1,0 +1,11 @@
+{
+  "name": "perso-demo",
+  "version": "1.0.0",
+  "description": "Prototype checkout demo served with Node.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "MIT"
+}
