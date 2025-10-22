@@ -2,50 +2,46 @@
 
 Une démonstration personnelle permettant d'explorer rapidement différentes idées de prototypes.
 
-## À propos du projet
+## Prototype actuel : Checkout Decathlon PL
 
-Ce dépôt sert de terrain d'expérimentation : il rassemble des notes et des exemples de code qui
-servent de base à la conception de prototypes. L'objectif est d'itérer rapidement sur des
-fonctionnalités ou interfaces sans contrainte lourde d'architecture.
+Ce dépôt contient un premier prototype qui reproduit l'étape « Delivery » du checkout
+Decathlon pour la Pologne, tel qu'illustré dans la maquette fournie. L'accent est mis sur :
 
-## Fonctionnalités clés
+- l'accessibilité (structure sémantique, focus clair, compatibilité clavier) ;
+- une mise en page responsive proche de la maquette desktop et mobile ;
+- l'option de paiement **BLIK** repliée par défaut et extensible au clic.
 
-- **Documentation claire** : un point d'entrée unique pour comprendre le but du dépôt.
-- **Structure légère** : idéal pour créer, tester et jeter des idées de prototypes.
-- **Évolutivité** : le dépôt peut facilement accueillir de nouveaux modules ou expériences.
+Le prototype est entièrement statique : aucun appel réseau ni logique de paiement réelle
+n'est implémenté.
 
-## Prise en main
+### Lancer la démo localement
 
 1. Cloner le dépôt :
    ```bash
    git clone https://github.com/votre-compte/perso-demo.git
    cd perso-demo
    ```
-2. Installer les dépendances du prototype sur lequel vous travaillez. Par exemple :
+2. Ouvrir `index.html` directement dans votre navigateur **ou** lancer un petit serveur HTTP :
    ```bash
-   npm install
+   python -m http.server 3000
    ```
-   *(Adaptez cette étape au langage ou framework utilisé par votre prototype.)*
-3. Lancer le prototype :
-   ```bash
-   npm run dev
-   ```
-   ou toute autre commande nécessaire pour exécuter votre expérimentation.
+   Puis visiter [http://localhost:3000](http://localhost:3000).
 
-## Organisation recommandée
+Aucune dépendance n'est nécessaire : HTML, CSS et JavaScript natif suffisent.
 
-- `docs/` : notes et réflexions sur les idées de prototypes.
-- `src/` : code source des expérimentations en cours.
-- `scripts/` : outils ou automatisations utiles pour accélérer vos itérations.
+## Structure du dépôt
 
-Ces répertoires ne sont pas encore tous présents ; créez-les selon vos besoins.
+- `index.html` : structure de la page et contenu du checkout.
+- `styles.css` : styles responsive inspirés du design Decathlon.
+- `script.js` : interactions du prototype (extension/repli du paiement BLIK).
+- `README.md` : ce guide.
 
-## Contributions
+## Contribution
 
-Les contributions sont les bienvenues. Ouvrez une *issue* pour décrire votre idée ou un problème
-rencontré, puis soumettez une *pull request* avec vos modifications.
+Les contributions sont les bienvenues. Ouvrez une *issue* pour proposer une amélioration ou
+signaler un problème, puis soumettez une *pull request* contenant vos changements.
 
 ## Licence
 
-Ce dépôt est distribué sous licence MIT. Consultez le fichier `LICENSE` si vous souhaitez en savoir
-plus sur vos droits et obligations.
+Ce dépôt est distribué sous licence MIT. Consultez le fichier `LICENSE` si vous souhaitez en
+savoir plus sur vos droits et obligations.
